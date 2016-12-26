@@ -13,7 +13,7 @@ class BaseViewController: UITableViewController {
     // MARK:- 定义变量
     lazy var visitorView : VisitorView = VisitorView.visitorView()
     
-    var isLogin : Bool = false
+    var isLogin : Bool = true
     
     
     // MARK:- 系统回调函数

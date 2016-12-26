@@ -21,11 +21,13 @@
 		BD6DA4861E0D175A00C8C2B1 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6DA4841E0D175A00C8C2B1 /* Discover.storyboard */; };
 		BD6DA4881E0D177300C8C2B1 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6DA4871E0D177300C8C2B1 /* Profile.storyboard */; };
 		BD6DA48B1E0D1DE700C8C2B1 /* New.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6DA4891E0D1DE700C8C2B1 /* New.storyboard */; };
+		BD8AC4F21E1148AD007CECDE /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8AC4F11E1148AD007CECDE /* UIBarButtonItem+Extension.swift */; };
 		BD8F8F241E0AA94D003A9614 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F8F231E0AA94D003A9614 /* MainViewController.swift */; };
 		BD8F8F261E0AAA7A003A9614 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F8F251E0AAA7A003A9614 /* HomeViewController.swift */; };
 		BD8F8F281E0AAAA0003A9614 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F8F271E0AAAA0003A9614 /* MessageViewController.swift */; };
 		BD8F8F2A1E0AAAB2003A9614 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F8F291E0AAAB2003A9614 /* DiscoverViewController.swift */; };
 		BD8F8F2C1E0AAABF003A9614 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F8F2B1E0AAABF003A9614 /* ProfileViewController.swift */; };
+		BDE4FB5E1E114CB0001EFD7C /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,11 +68,13 @@
 		BD6DA4851E0D175A00C8C2B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
 		BD6DA4871E0D177300C8C2B1 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../Profile.storyboard; sourceTree = "<group>"; };
 		BD6DA48A1E0D1DE700C8C2B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SHWeibo/Base.lproj/New.storyboard; sourceTree = SOURCE_ROOT; };
+		BD8AC4F11E1148AD007CECDE /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		BD8F8F231E0AA94D003A9614 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BD8F8F251E0AAA7A003A9614 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BD8F8F271E0AAAA0003A9614 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		BD8F8F291E0AAAB2003A9614 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		BD8F8F2B1E0AAABF003A9614 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				BD50D1E81E10DF7B008209B9 /* UIButton+Extension.swift */,
+				BD8AC4F11E1148AD007CECDE /* UIBarButtonItem+Extension.swift */,
+				BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -374,7 +380,9 @@
 			files = (
 				BD8F8F2C1E0AAABF003A9614 /* ProfileViewController.swift in Sources */,
 				BD04C0F71E0A6C5B0021FF19 /* AppDelegate.swift in Sources */,
+				BD8AC4F21E1148AD007CECDE /* UIBarButtonItem+Extension.swift in Sources */,
 				BD8F8F241E0AA94D003A9614 /* MainViewController.swift in Sources */,
+				BDE4FB5E1E114CB0001EFD7C /* TitleButton.swift in Sources */,
 				BD8F8F281E0AAAA0003A9614 /* MessageViewController.swift in Sources */,
 				BD8F8F261E0AAA7A003A9614 /* HomeViewController.swift in Sources */,
 				BD50D1EC1E1102FC008209B9 /* BaseViewController.swift in Sources */,
