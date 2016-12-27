@@ -24,12 +24,8 @@ class BaseViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
 
     }
-
-   
 }
 
     // MARK:- 设置UI界面

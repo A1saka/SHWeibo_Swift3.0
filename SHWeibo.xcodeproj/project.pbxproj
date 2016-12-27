@@ -27,6 +27,9 @@
 		BD8F8F281E0AAAA0003A9614 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F8F271E0AAAA0003A9614 /* MessageViewController.swift */; };
 		BD8F8F2A1E0AAAB2003A9614 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F8F291E0AAAB2003A9614 /* DiscoverViewController.swift */; };
 		BD8F8F2C1E0AAABF003A9614 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F8F2B1E0AAABF003A9614 /* ProfileViewController.swift */; };
+		BDBC32B71E1273D3009980CF /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC32B51E1273D3009980CF /* PopoverViewController.swift */; };
+		BDBC32B81E1273D3009980CF /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBC32B61E1273D3009980CF /* PopoverViewController.xib */; };
+		BDBC32BA1E127F2E009980CF /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */; };
 		BDE4FB5E1E114CB0001EFD7C /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,9 @@
 		BD8F8F271E0AAAA0003A9614 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		BD8F8F291E0AAAB2003A9614 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		BD8F8F2B1E0AAABF003A9614 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BDBC32B51E1273D3009980CF /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		BDBC32B61E1273D3009980CF /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
+		BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +185,9 @@
 			children = (
 				BD8F8F251E0AAA7A003A9614 /* HomeViewController.swift */,
 				BD6DA47F1E0D172200C8C2B1 /* Home.storyboard */,
+				BDBC32B51E1273D3009980CF /* PopoverViewController.swift */,
+				BDBC32B61E1273D3009980CF /* PopoverViewController.xib */,
+				BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -348,6 +357,7 @@
 			files = (
 				BD04C0FE1E0A6C5C0021FF19 /* Assets.xcassets in Resources */,
 				BD6DA4831E0D174200C8C2B1 /* Message.storyboard in Resources */,
+				BDBC32B81E1273D3009980CF /* PopoverViewController.xib in Resources */,
 				BD04C0FC1E0A6C5C0021FF19 /* Main.storyboard in Resources */,
 				BD50D1F01E110500008209B9 /* VisitorView.xib in Resources */,
 				BD6DA4811E0D172200C8C2B1 /* Home.storyboard in Resources */,
@@ -378,10 +388,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDBC32BA1E127F2E009980CF /* PopoverPresentationController.swift in Sources */,
 				BD8F8F2C1E0AAABF003A9614 /* ProfileViewController.swift in Sources */,
 				BD04C0F71E0A6C5B0021FF19 /* AppDelegate.swift in Sources */,
 				BD8AC4F21E1148AD007CECDE /* UIBarButtonItem+Extension.swift in Sources */,
 				BD8F8F241E0AA94D003A9614 /* MainViewController.swift in Sources */,
+				BDBC32B71E1273D3009980CF /* PopoverViewController.swift in Sources */,
 				BDE4FB5E1E114CB0001EFD7C /* TitleButton.swift in Sources */,
 				BD8F8F281E0AAAA0003A9614 /* MessageViewController.swift in Sources */,
 				BD8F8F261E0AAA7A003A9614 /* HomeViewController.swift in Sources */,
