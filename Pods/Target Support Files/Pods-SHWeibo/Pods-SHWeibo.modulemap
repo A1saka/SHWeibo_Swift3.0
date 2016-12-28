@@ -1,0 +1,6 @@
+framework module Pods_SHWeibo {
+  umbrella header "Pods-SHWeibo-umbrella.h"
+
+  export *
+  module * { export * }
+}

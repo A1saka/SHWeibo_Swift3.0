@@ -10,7 +10,10 @@ import UIKit
 
 class PopoverPresentationController: UIPresentationController {
     
+    
     fileprivate lazy var coverView : UIView = UIView()
+    
+    
     
     override func containerViewWillLayoutSubviews() {
         super.containerViewWillLayoutSubviews()

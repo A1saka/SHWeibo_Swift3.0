@@ -9,10 +9,11 @@
 import UIKit
 
 class HomeViewController: BaseViewController {
+
     var isPresented : Bool = false
     // MARK:- 懒加载属性
     fileprivate lazy var titleBtn : TitleButton = TitleButton()
-    
+
     
     // MARK:- viewDidLoad
     override func viewDidLoad() {
@@ -67,6 +68,8 @@ extension HomeViewController{
     }
 
 }
+
+// MARK:- 顶部导航栏自定义动画
 extension HomeViewController : UIViewControllerTransitioningDelegate{
     
     // 改变弹出view的大小
@@ -82,6 +85,7 @@ extension HomeViewController : UIViewControllerTransitioningDelegate{
     // 自定义消失的动画
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresented = false
+        titleBtn.isSelected = !titleBtn.isSelected
         return self
     }
 }
@@ -93,15 +97,15 @@ extension HomeViewController : UIViewControllerAnimatedTransitioning{
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.25
     }
-
+    
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning){
         isPresented ? animationForPresentedView(using: transitionContext) : animationForDismissView(using: transitionContext)
-        }
+    }
     
-
+    
     /// 自定义弹出动画
     fileprivate func animationForPresentedView(using transitionContext: UIViewControllerContextTransitioning){
-
+        
         // 获取弹出的View
         let presenetdView = transitionContext.view(forKey: UITransitionContextViewKey.to)
         
@@ -115,7 +119,7 @@ extension HomeViewController : UIViewControllerAnimatedTransitioning{
             presenetdView?.transform = CGAffineTransform.identity
         }) { (_) in
             transitionContext.completeTransition(true)
-
+            
         }
     }
     
@@ -131,6 +135,7 @@ extension HomeViewController : UIViewControllerAnimatedTransitioning{
         }) { (_) in
             dismissView?.removeFromSuperview()
             transitionContext.completeTransition(true)
-            }
         }
     }
+}
+
