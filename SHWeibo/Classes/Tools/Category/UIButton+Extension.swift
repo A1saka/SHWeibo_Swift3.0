@@ -11,7 +11,7 @@ import UIKit
 
 extension UIButton {
 
-    
+    // 遍历函数
     convenience init(imageName: String, bgImageName: String) {
         
         self.init()

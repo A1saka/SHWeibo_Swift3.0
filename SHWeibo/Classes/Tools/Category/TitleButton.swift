@@ -19,7 +19,7 @@ class TitleButton: UIButton {
         sizeToFit()
         
     }
-    
+    // required--必须实现
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
