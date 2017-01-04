@@ -24,7 +24,7 @@ class TitleButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 
-    
+    // 布局子控件
     override func layoutSubviews() {
         super.layoutSubviews()
         titleLabel!.frame.origin.x = 0
