@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        
+        // tabbar,UINavigationBar样式设置
         UITabBar.appearance().tintColor = UIColor.orange
         UINavigationBar.appearance().tintColor = UIColor.orange
         return true
@@ -24,3 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+func SHLog<S>(message : S, file : String = #file, funcName : String = #function, lineNumber : Int = #line){
+    
+    let fileName = (file as NSString).lastPathComponent
+    
+    print("\(fileName)--\(funcName)--\(lineNumber) : \(message)")
+}
