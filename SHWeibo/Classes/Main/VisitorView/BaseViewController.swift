@@ -13,7 +13,7 @@ class BaseViewController: UITableViewController {
     // MARK:- 定义变量
     lazy var visitorView : VisitorView = VisitorView.visitorView()
     
-    var isLogin : Bool = true
+    var isLogin : Bool = false
     
     
     // MARK:- 系统回调函数
@@ -60,6 +60,12 @@ extension BaseViewController{
 
     func loginClick() {
         print("登录")
+        let OAuthVc = OAuthViewController()
+        
+        let OAuthNav = UINavigationController(rootViewController: OAuthVc)
+        
+        present(OAuthNav, animated: true, completion: nil)
+        
     }
 
 }

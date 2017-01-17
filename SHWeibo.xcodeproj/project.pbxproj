@@ -13,6 +13,8 @@
 		BD04C0FE1E0A6C5C0021FF19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD04C0FD1E0A6C5C0021FF19 /* Assets.xcassets */; };
 		BD04C10C1E0A6C5C0021FF19 /* SHWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04C10B1E0A6C5C0021FF19 /* SHWeiboTests.swift */; };
 		BD04C1171E0A6C5C0021FF19 /* SHWeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD04C1161E0A6C5C0021FF19 /* SHWeiboUITests.swift */; };
+		BD1D25961E2E3C4000C958BD /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1D25941E2E3C4000C958BD /* OAuthViewController.swift */; };
+		BD1D25971E2E3C4000C958BD /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD1D25951E2E3C4000C958BD /* OAuthViewController.xib */; };
 		BD50D1E91E10DF7B008209B9 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50D1E81E10DF7B008209B9 /* UIButton+Extension.swift */; };
 		BD50D1EC1E1102FC008209B9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50D1EB1E1102FC008209B9 /* BaseViewController.swift */; };
 		BD50D1EE1E1104F1008209B9 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50D1ED1E1104F1008209B9 /* VisitorView.swift */; };
@@ -68,6 +70,8 @@
 		BD04C1121E0A6C5C0021FF19 /* SHWeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SHWeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD04C1161E0A6C5C0021FF19 /* SHWeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHWeiboUITests.swift; sourceTree = "<group>"; };
 		BD04C1181E0A6C5C0021FF19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD1D25941E2E3C4000C958BD /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		BD1D25951E2E3C4000C958BD /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		BD50D1E81E10DF7B008209B9 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		BD50D1EB1E1102FC008209B9 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BD50D1ED1E1104F1008209B9 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
@@ -186,6 +190,15 @@
 			path = SHWeiboUITests;
 			sourceTree = "<group>";
 		};
+		BD1D25931E2E3C1100C958BD /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				BD1D25941E2E3C4000C958BD /* OAuthViewController.swift */,
+				BD1D25951E2E3C4000C958BD /* OAuthViewController.xib */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
 		BD41F9B91E0AA31400438762 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +236,7 @@
 		BD41F9BC1E0AA31400438762 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BD1D25931E2E3C1100C958BD /* OAuth */,
 				BD50D1EA1E1102C7008209B9 /* VisitorView */,
 				BD8F8F231E0AA94D003A9614 /* MainViewController.swift */,
 				BD04C0FA1E0A6C5C0021FF19 /* Main.storyboard */,
@@ -386,6 +400,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1D25971E2E3C4000C958BD /* OAuthViewController.xib in Resources */,
 				BD04C0FE1E0A6C5C0021FF19 /* Assets.xcassets in Resources */,
 				BD6DA4831E0D174200C8C2B1 /* Message.storyboard in Resources */,
 				BDBC32B81E1273D3009980CF /* PopoverViewController.xib in Resources */,
@@ -467,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1D25961E2E3C4000C958BD /* OAuthViewController.swift in Sources */,
 				BDBC32BA1E127F2E009980CF /* PopoverPresentationController.swift in Sources */,
 				BD8F8F2C1E0AAABF003A9614 /* ProfileViewController.swift in Sources */,
 				BD04C0F71E0A6C5B0021FF19 /* AppDelegate.swift in Sources */,
