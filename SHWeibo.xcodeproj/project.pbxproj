@@ -33,6 +33,7 @@
 		BDBC32B71E1273D3009980CF /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC32B51E1273D3009980CF /* PopoverViewController.swift */; };
 		BDBC32B81E1273D3009980CF /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBC32B61E1273D3009980CF /* PopoverViewController.xib */; };
 		BDBC32BA1E127F2E009980CF /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */; };
+		BDC4FE971E31AFF100BC2E6C /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4FE961E31AFF100BC2E6C /* NetworkTool.swift */; };
 		BDE4FB5E1E114CB0001EFD7C /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		BDBC32B51E1273D3009980CF /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		BDBC32B61E1273D3009980CF /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
+		BDC4FE961E31AFF100BC2E6C /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkTool.swift; path = ../../NetworkTool.swift; sourceTree = "<group>"; };
 		BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				BD50D1E71E10DF41008209B9 /* Category */,
+				BDC4FE961E31AFF100BC2E6C /* NetworkTool.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				BDBC32BA1E127F2E009980CF /* PopoverPresentationController.swift in Sources */,
 				BD8F8F2C1E0AAABF003A9614 /* ProfileViewController.swift in Sources */,
 				BD04C0F71E0A6C5B0021FF19 /* AppDelegate.swift in Sources */,
+				BDC4FE971E31AFF100BC2E6C /* NetworkTool.swift in Sources */,
 				BD8AC4F21E1148AD007CECDE /* UIBarButtonItem+Extension.swift in Sources */,
 				BD8F8F241E0AA94D003A9614 /* MainViewController.swift in Sources */,
 				BDBC32B71E1273D3009980CF /* PopoverViewController.swift in Sources */,

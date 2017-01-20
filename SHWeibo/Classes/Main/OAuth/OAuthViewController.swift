@@ -54,7 +54,47 @@ extension OAuthViewController {
     }
     @objc func fillItemClick(){
         
-        let jsCode = "document.getElementById('userId').value='2385986571@qq.com';document.getElementById('passwd').value='scgg25655565';"
+        let jsCode = "document.getElementById('userId').value='2385986571@qq.com';document.getElementById('passwd').value='sc2,15271662198';"
         webView.stringByEvaluatingJavaScript(from: jsCode)
     }
+}
+
+
+// MARK:- webView的delegate
+extension OAuthViewController : UIWebViewDelegate {
+    
+    // 准备加载网页之前执行该方法
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        
+        guard let url = request.url else {
+            return true
+        }
+        // 获取url中的字符串
+        let urlString = url.absoluteString
+        // 判断是否含有code
+        guard urlString.contains("code=") else {
+            return true
+        }
+        // 将code截取
+        let code = urlString.components(separatedBy: "code=").last!
+        print(code)
+        loadAccessToken(code: code)
+        return false
+    }
+
+
+}
+// MARK:- 请求数据
+extension OAuthViewController {
+    fileprivate func loadAccessToken(code : String){
+        NetworkTool.shareInstance.request(requestType: .POST, url: "https://api.weibo.com/oauth2/access_token", parameters: ["client_id": "2875293880", "client_secret": "3a71507008d2b536062828db65521b3e", "grant_type" : "authorization_code", "redirect_uri" : "https://github.com/A1saka", "code" : code]) { (result, error) in
+            if error !=  nil {
+                print(error!)
+                return
+            }
+            print(result!)
+        }
+    
+    }
+
 }
