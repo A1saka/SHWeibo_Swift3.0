@@ -54,7 +54,7 @@ extension OAuthViewController {
     }
     @objc func fillItemClick(){
         
-        let jsCode = "document.getElementById('userId').value='2385986571@qq.com';document.getElementById('passwd').value='sc2,15271662198';"
+        let jsCode = "document.getElementById('userId').value='13797780769';document.getElementById('passwd').value='qwerasd,123';"
         webView.stringByEvaluatingJavaScript(from: jsCode)
     }
 }
