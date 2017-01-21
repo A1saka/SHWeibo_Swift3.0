@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class OAuthViewController: UIViewController {
     
@@ -87,14 +88,59 @@ extension OAuthViewController : UIWebViewDelegate {
 // MARK:- 请求数据
 extension OAuthViewController {
     fileprivate func loadAccessToken(code : String){
+        // 获取授权access_token
         NetworkTool.shareInstance.request(requestType: .POST, url: "https://api.weibo.com/oauth2/access_token", parameters: ["client_id": "2875293880", "client_secret": "3a71507008d2b536062828db65521b3e", "grant_type" : "authorization_code", "redirect_uri" : "https://github.com/A1saka", "code" : code]) { (result, error) in
             if error !=  nil {
                 print(error!)
                 return
             }
             print(result!)
+            guard let accountDict = result else {
+                print("获取授权信息失败")
+                return
+            }
+            // 字典 -> 模型
+            let account = UserAccount(dict: accountDict)
+//            print(account)
+            
+            // 请求用户信息
+            self.loadUserInfo(account: account)
         }
     
     }
-
+    
+    // 请求用户数据
+    fileprivate func loadUserInfo(account: UserAccount){
+        // 校验accessToken和uid
+        guard let accessToken = account.access_token else {
+            return
+        }
+        guard let uid = account.uid  else {
+            return
+        }
+        print("授权access为：\(accessToken)uid为：\(uid)")
+        // 请求url和参数
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        let parameters = ["access_token": accessToken, "uid": uid]
+        
+        let manager = AFHTTPSessionManager()
+        manager.responseSerializer.acceptableContentTypes?.insert("text/html")
+        manager.responseSerializer.acceptableContentTypes?.insert("application/json")
+        manager.responseSerializer.acceptableContentTypes?.insert("text/json")
+        manager.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        manager.responseSerializer.acceptableContentTypes?.insert("text/JavaScript")
+        
+        print(manager.responseSerializer.acceptableContentTypes!)
+        manager.get(urlString, parameters: parameters, progress: nil, success: {  (operation, responseObject) in
+            
+            if let dic = responseObject as? [String: Any], let matches = dic["matches"] as? [[String: Any]] {
+                print(matches)
+            }
+           
+        }) {   (operation, error) in
+            print("错误信息为: \(error)")        }
+    }
 }
+
+
+

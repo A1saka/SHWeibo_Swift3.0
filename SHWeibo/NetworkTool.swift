@@ -31,16 +31,16 @@ class NetworkTool: AFHTTPSessionManager {
 extension NetworkTool {
     
     // 将成功和失败的回调写在一个逃逸闭包中
-    func request(requestType : RequestMethods, url : String, parameters : [String : Any], finshed : @escaping(_ result : [String : Any]?, _ error : Error?) -> ()) {
+    func request(requestType : RequestMethods, url : String, parameters : [String : Any], finished : @escaping(_ result : [String : Any]?, _ error : Error?) -> ()) {
         
         // 成功闭包
         let successBlock = { (task: URLSessionDataTask, result: Any?) in
-            finshed(result as! [String : Any]? , nil)
+            finished(result as! [String : Any]? , nil)
         }
         
         // 失败的闭包
         let failureBlock = { (task: URLSessionDataTask?, error: Error) in
-            finshed(nil, error)
+            finished(nil, error)
         }
         
         // Get 请求
