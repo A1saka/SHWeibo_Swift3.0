@@ -102,7 +102,6 @@ extension OAuthViewController {
             // 字典 -> 模型
             let account = UserAccount(dict: accountDict)
 
-            
             // 请求用户信息
             self.loadUserInfo(account: account)
         }
@@ -132,7 +131,13 @@ extension OAuthViewController {
 
             account.screen_name = (responseObject as! [String : AnyObject])["screen_name"] as! String?
             account.avatar_large = (responseObject as! [String : AnyObject])["avatar_large"] as! String?
-        print(account)
+            
+            // 将account对象进行保存
+            // 1.获取沙盒路径
+            var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+            accountPath = (accountPath as NSString).appendingPathComponent("account.plist")
+            print(accountPath)
+            NSKeyedArchiver.archiveRootObject(account, toFile: accountPath)
             
         }) {   (operation, error) in
             print("错误信息为: \(error)")        }
