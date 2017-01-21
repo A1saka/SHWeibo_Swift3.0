@@ -55,7 +55,7 @@ extension OAuthViewController {
     }
     @objc func fillItemClick(){
         
-        let jsCode = "document.getElementById('userId').value='13797780769';document.getElementById('passwd').value='qwerasd,123';"
+        let jsCode = "document.getElementById('userId').value='2385986571@qq.com';document.getElementById('passwd').value='sc2,15271662198';"
         webView.stringByEvaluatingJavaScript(from: jsCode)
     }
 }
@@ -89,7 +89,7 @@ extension OAuthViewController : UIWebViewDelegate {
 extension OAuthViewController {
     fileprivate func loadAccessToken(code : String){
         // 获取授权access_token
-        NetworkTool.shareInstance.request(requestType: .POST, url: "https://api.weibo.com/oauth2/access_token", parameters: ["client_id": "2875293880", "client_secret": "3a71507008d2b536062828db65521b3e", "grant_type" : "authorization_code", "redirect_uri" : "https://github.com/A1saka", "code" : code]) { (result, error) in
+        NetworkTool.shareInstance.request(requestType: .POST, url: "https://api.weibo.com/oauth2/access_token", parameters: ["client_id": "2875293880", "client_secret": "5a2587b5c53614fee25bccf84c0314a3", "grant_type" : "authorization_code", "redirect_uri" : "https://github.com/A1saka", "code" : code]) { (result, error) in
             if error !=  nil {
                 print(error!)
                 return
@@ -101,7 +101,7 @@ extension OAuthViewController {
             }
             // 字典 -> 模型
             let account = UserAccount(dict: accountDict)
-//            print(account)
+
             
             // 请求用户信息
             self.loadUserInfo(account: account)
@@ -125,18 +125,15 @@ extension OAuthViewController {
         
         let manager = AFHTTPSessionManager()
         manager.responseSerializer.acceptableContentTypes?.insert("text/html")
-        manager.responseSerializer.acceptableContentTypes?.insert("application/json")
-        manager.responseSerializer.acceptableContentTypes?.insert("text/json")
         manager.responseSerializer.acceptableContentTypes?.insert("text/plain")
-        manager.responseSerializer.acceptableContentTypes?.insert("text/JavaScript")
         
-        print(manager.responseSerializer.acceptableContentTypes!)
         manager.get(urlString, parameters: parameters, progress: nil, success: {  (operation, responseObject) in
             
-            if let dic = responseObject as? [String: Any], let matches = dic["matches"] as? [[String: Any]] {
-                print(matches)
-            }
-           
+
+            account.screen_name = (responseObject as! [String : AnyObject])["screen_name"] as! String?
+            account.avatar_large = (responseObject as! [String : AnyObject])["avatar_large"] as! String?
+        print(account)
+            
         }) {   (operation, error) in
             print("错误信息为: \(error)")        }
     }

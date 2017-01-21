@@ -19,6 +19,9 @@ class UserAccount: NSObject {
     }                                   // 过期时间（秒）
     var uid : String?                   // 用户ID
     var expires_date : NSDate?
+    var screen_name : String?           // 昵称
+    var avatar_large : String?          // 头像地址（url）
+    
     
     
     // 自定义构造函数
@@ -35,6 +38,6 @@ class UserAccount: NSObject {
     
     override var description: String{
         
-        return dictionaryWithValues(forKeys: ["access_token", "expires_date", "uid"]).description
+        return dictionaryWithValues(forKeys: ["access_token", "expires_date", "uid", "avatar_large", "screen_name"]).description
     }
 }
