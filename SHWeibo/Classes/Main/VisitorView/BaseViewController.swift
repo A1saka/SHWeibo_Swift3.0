@@ -13,28 +13,15 @@ class BaseViewController: UITableViewController {
     // MARK:- 定义变量
     lazy var visitorView : VisitorView = VisitorView.visitorView()
     
-    var isLogin : Bool = false
+    var isLogin: Bool = UserAccountViewModel.shareIntance.isLogin
     
     
     // MARK:- 系统回调函数
     override func loadView() {
         
-        // 从沙盒中读取用户信息
-        var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        accountPath = (accountPath as NSString).appendingPathComponent("account.plist")
-        
-        let account = NSKeyedUnarchiver.unarchiveObject(withFile: accountPath) as? UserAccount
-        
-        if let account = account {
-            // 判断accessToken是否过期
-            if let expiresDate = account.expires_date {
-                
-                isLogin = expiresDate.compare(Date()) == ComparisonResult.orderedDescending
-            }
-            
-        
-        }
         isLogin ? super.loadView() : setupvisitorView()
+        
+        
     }
 
     

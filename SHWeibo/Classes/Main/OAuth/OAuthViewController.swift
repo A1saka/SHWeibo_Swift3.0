@@ -136,7 +136,7 @@ extension OAuthViewController {
             // 1.获取沙盒路径
             var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
             accountPath = (accountPath as NSString).appendingPathComponent("account.plist")
-            print(accountPath)
+//            print(accountPath)
             NSKeyedArchiver.archiveRootObject(account, toFile: accountPath)
             
         }) {   (operation, error) in
