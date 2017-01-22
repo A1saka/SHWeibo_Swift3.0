@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="SHWeibo" customModuleProvider="target">
+            <connections>
+                <outlet property="headView" destination="RlI-ez-Vta" id="i3U-lQ-gb1"/>
+                <outlet property="iconViewBottomConstraint" destination="9nr-lE-Ehr" id="g2m-LR-j7t"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="sKX-D6-pGG" userLabel="背景">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RlI-ez-Vta" userLabel="头像">
+                    <rect key="frame" x="143" y="427" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="oXd-c8-fYk"/>
+                        <constraint firstAttribute="width" constant="90" id="zjG-3S-q1E"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="45"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="sKX-D6-pGG" secondAttribute="trailing" id="0Am-7j-z1T"/>
+                <constraint firstItem="sKX-D6-pGG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5XB-vR-fCc"/>
+                <constraint firstAttribute="bottom" secondItem="RlI-ez-Vta" secondAttribute="bottom" constant="150" id="9nr-lE-Ehr"/>
+                <constraint firstAttribute="bottom" secondItem="sKX-D6-pGG" secondAttribute="bottom" id="Jjw-ph-VbI"/>
+                <constraint firstItem="sKX-D6-pGG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VDt-2a-VRk"/>
+                <constraint firstItem="RlI-ez-Vta" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bZ3-n5-Hu9"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="375" height="667"/>
+    </resources>
+</document>

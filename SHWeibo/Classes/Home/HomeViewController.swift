@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class HomeViewController: BaseViewController {
 
@@ -28,6 +29,9 @@ class HomeViewController: BaseViewController {
         
         // 设置导航栏
         setupNaviBar()
+        
+        // 请求主页微博数据
+        loadWeiboData()
     }
 }
 
@@ -139,3 +143,34 @@ extension HomeViewController : UIViewControllerAnimatedTransitioning{
     }
 }
 
+// MARK:- 请求数据
+extension HomeViewController {
+
+    fileprivate func loadWeiboData(){
+    
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let parameters = ["access_token": UserAccountViewModel.shareIntance.account?.access_token]
+        
+        let manager = AFHTTPSessionManager()
+        manager.responseSerializer.acceptableContentTypes?.insert("text/html")
+        manager.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        manager.get(urlString, parameters: parameters, progress: nil, success: {(operation, responseObject) in
+            
+            guard let responseObjectDict = responseObject as? [String : AnyObject] else{
+                return
+            }
+            guard let resultArrary = responseObjectDict["statuses"] as? [[String : AnyObject]] else{
+                return
+            }
+            for statusesDict in resultArrary{
+                print(statusesDict)
+            
+            }
+        }) { (operation, error) in
+            print(error)
+        }
+    
+    }
+
+}

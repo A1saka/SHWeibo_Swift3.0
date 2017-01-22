@@ -37,6 +37,8 @@
 		BDBC32BA1E127F2E009980CF /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */; };
 		BDC4FE971E31AFF100BC2E6C /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4FE961E31AFF100BC2E6C /* NetworkTool.swift */; };
 		BDE4FB5E1E114CB0001EFD7C /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */; };
+		BDFB88921E347D550023B2B8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFB88901E347D550023B2B8 /* WelcomeViewController.swift */; };
+		BDFB88931E347D550023B2B8 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDFB88911E347D550023B2B8 /* WelcomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		BDC4FE961E31AFF100BC2E6C /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkTool.swift; path = ../../NetworkTool.swift; sourceTree = "<group>"; };
 		BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		BDFB88901E347D550023B2B8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		BDFB88911E347D550023B2B8 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +248,7 @@
 		BD41F9BC1E0AA31400438762 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BDFB888F1E347CFF0023B2B8 /* WelcomeView */,
 				BD1D25931E2E3C1100C958BD /* OAuth */,
 				BD50D1EA1E1102C7008209B9 /* VisitorView */,
 				BD8F8F231E0AA94D003A9614 /* MainViewController.swift */,
@@ -297,6 +302,15 @@
 				BD50D1EF1E110500008209B9 /* VisitorView.xib */,
 			);
 			path = VisitorView;
+			sourceTree = "<group>";
+		};
+		BDFB888F1E347CFF0023B2B8 /* WelcomeView */ = {
+			isa = PBXGroup;
+			children = (
+				BDFB88901E347D550023B2B8 /* WelcomeViewController.swift */,
+				BDFB88911E347D550023B2B8 /* WelcomeViewController.xib */,
+			);
+			path = WelcomeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,6 +428,7 @@
 				BD6DA4831E0D174200C8C2B1 /* Message.storyboard in Resources */,
 				BDBC32B81E1273D3009980CF /* PopoverViewController.xib in Resources */,
 				BD04C0FC1E0A6C5C0021FF19 /* Main.storyboard in Resources */,
+				BDFB88931E347D550023B2B8 /* WelcomeViewController.xib in Resources */,
 				BD50D1F01E110500008209B9 /* VisitorView.xib in Resources */,
 				BD6DA4811E0D172200C8C2B1 /* Home.storyboard in Resources */,
 				BD6DA4881E0D177300C8C2B1 /* Profile.storyboard in Resources */,
@@ -500,6 +515,7 @@
 				BD8F8F241E0AA94D003A9614 /* MainViewController.swift in Sources */,
 				BDBC32B71E1273D3009980CF /* PopoverViewController.swift in Sources */,
 				BD29B12E1E3445650088628E /* UserAccountViewModel.swift in Sources */,
+				BDFB88921E347D550023B2B8 /* WelcomeViewController.swift in Sources */,
 				BD9B197D1E32FA2400C2B9CE /* UserAccount.swift in Sources */,
 				BDE4FB5E1E114CB0001EFD7C /* TitleButton.swift in Sources */,
 				BD8F8F281E0AAAA0003A9614 /* MessageViewController.swift in Sources */,

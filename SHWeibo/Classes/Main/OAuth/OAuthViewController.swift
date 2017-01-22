@@ -134,13 +134,19 @@ extension OAuthViewController {
             
             // 将account对象进行保存
             // 1.获取沙盒路径
-            var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-            accountPath = (accountPath as NSString).appendingPathComponent("account.plist")
-//            print(accountPath)
-            NSKeyedArchiver.archiveRootObject(account, toFile: accountPath)
+            NSKeyedArchiver.archiveRootObject(account, toFile: UserAccountViewModel.shareIntance.accountPath)
+//            print(UserAccountViewModel.shareIntance.accountPath)
+            
+            // 将account对象设置到单例对象中
+            UserAccountViewModel.shareIntance.account = account 
+            // 退出当前控制器, 显示WelcomeView
+            self.dismiss(animated: false, completion: {
+                UIApplication.shared.keyWindow?.rootViewController = WelcomeViewController()
+            })
             
         }) {   (operation, error) in
-            print("错误信息为: \(error)")        }
+            print("错误信息为: \(error)")
+        }
     }
 }
 
