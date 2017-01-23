@@ -48,7 +48,7 @@ extension HomeViewController{
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
         
         // 设置titleView
-        titleBtn.setTitle("LustXcc", for: .normal)
+        titleBtn.setTitle("A1saka", for: .normal)
         titleBtn.addTarget(self, action: #selector(titleBtnClick(titleBtn:)), for: .touchUpInside)
         navigationItem.titleView = titleBtn
     

@@ -37,6 +37,7 @@
 		BDBC32BA1E127F2E009980CF /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */; };
 		BDC4FE971E31AFF100BC2E6C /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4FE961E31AFF100BC2E6C /* NetworkTool.swift */; };
 		BDD96A501E359E82002B447E /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD96A4F1E359E82002B447E /* Status.swift */; };
+		BDD96A8E1E362E3D002B447E /* Date-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD96A8D1E362E3D002B447E /* Date-Extension.swift */; };
 		BDE4FB5E1E114CB0001EFD7C /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */; };
 		BDFB88921E347D550023B2B8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFB88901E347D550023B2B8 /* WelcomeViewController.swift */; };
 		BDFB88931E347D550023B2B8 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDFB88911E347D550023B2B8 /* WelcomeViewController.xib */; };
@@ -100,6 +101,7 @@
 		BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		BDC4FE961E31AFF100BC2E6C /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkTool.swift; path = ../../NetworkTool.swift; sourceTree = "<group>"; };
 		BDD96A4F1E359E82002B447E /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		BDD96A8D1E362E3D002B447E /* Date-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date-Extension.swift"; sourceTree = "<group>"; };
 		BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		BDFB88901E347D550023B2B8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BDFB88911E347D550023B2B8 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 		BD50D1E71E10DF41008209B9 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				BDD96A8D1E362E3D002B447E /* Date-Extension.swift */,
 				BD50D1E81E10DF7B008209B9 /* UIButton+Extension.swift */,
 				BD8AC4F11E1148AD007CECDE /* UIBarButtonItem+Extension.swift */,
 				BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */,
@@ -520,6 +523,7 @@
 				BD1D25961E2E3C4000C958BD /* OAuthViewController.swift in Sources */,
 				BDBC32BA1E127F2E009980CF /* PopoverPresentationController.swift in Sources */,
 				BD8F8F2C1E0AAABF003A9614 /* ProfileViewController.swift in Sources */,
+				BDD96A8E1E362E3D002B447E /* Date-Extension.swift in Sources */,
 				BD04C0F71E0A6C5B0021FF19 /* AppDelegate.swift in Sources */,
 				BDC4FE971E31AFF100BC2E6C /* NetworkTool.swift in Sources */,
 				BD8AC4F21E1148AD007CECDE /* UIBarButtonItem+Extension.swift in Sources */,

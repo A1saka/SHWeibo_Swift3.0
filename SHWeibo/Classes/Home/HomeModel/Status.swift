@@ -10,7 +10,16 @@ import UIKit
 
 class Status: NSObject {
     // MARK:- 属性
-    var created_at : String?    // 时间
+    var created_at : String?  {
+    
+        didSet {
+            guard let created_at = created_at else {
+                return
+            }
+        createAtText = Date.processTimeData(recevieTimeData: created_at)
+        }
+    
+    }                           // 时间
     var source : String?  {
         didSet{
             // 校验是否为空值
@@ -31,6 +40,7 @@ class Status: NSObject {
 
     // MARK:- 数据处理属性
     var sourceText : String?
+    var createAtText : String?
     
     // MARK:- 自定义构造函数
     init(dict : [String : AnyObject]) {
