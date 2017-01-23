@@ -15,6 +15,7 @@ class HomeViewController: BaseViewController {
     // MARK:- 懒加载属性
     fileprivate lazy var titleBtn : TitleButton = TitleButton()
 
+    fileprivate lazy var statuses : [Status] = [Status]()
     
     // MARK:- viewDidLoad
     override func viewDidLoad() {
@@ -156,7 +157,6 @@ extension HomeViewController {
         manager.responseSerializer.acceptableContentTypes?.insert("text/plain")
         
         manager.get(urlString, parameters: parameters, progress: nil, success: {(operation, responseObject) in
-            
             guard let responseObjectDict = responseObject as? [String : AnyObject] else{
                 return
             }
@@ -164,13 +164,37 @@ extension HomeViewController {
                 return
             }
             for statusesDict in resultArrary{
-                print(statusesDict)
+                let status = Status(dict : statusesDict)
+                self.statuses.append(status)
             
             }
+            
+            self.tableView.reloadData()
+            
         }) { (operation, error) in
             print(error)
         }
     
+    }
+
+}
+
+
+// MARK:- tableView的数据源方法
+extension HomeViewController {
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statuses.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 创建cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell")!
+        let status = statuses[indexPath.row]
+        
+        cell.textLabel?.text = status.text
+        return cell
+        
     }
 
 }

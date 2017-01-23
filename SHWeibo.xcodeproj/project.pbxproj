@@ -36,6 +36,7 @@
 		BDBC32B81E1273D3009980CF /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBC32B61E1273D3009980CF /* PopoverViewController.xib */; };
 		BDBC32BA1E127F2E009980CF /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */; };
 		BDC4FE971E31AFF100BC2E6C /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4FE961E31AFF100BC2E6C /* NetworkTool.swift */; };
+		BDD96A501E359E82002B447E /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD96A4F1E359E82002B447E /* Status.swift */; };
 		BDE4FB5E1E114CB0001EFD7C /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */; };
 		BDFB88921E347D550023B2B8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFB88901E347D550023B2B8 /* WelcomeViewController.swift */; };
 		BDFB88931E347D550023B2B8 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDFB88911E347D550023B2B8 /* WelcomeViewController.xib */; };
@@ -98,6 +99,7 @@
 		BDBC32B61E1273D3009980CF /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		BDC4FE961E31AFF100BC2E6C /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkTool.swift; path = ../../NetworkTool.swift; sourceTree = "<group>"; };
+		BDD96A4F1E359E82002B447E /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		BDE4FB5D1E114CB0001EFD7C /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		BDFB88901E347D550023B2B8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BDFB88911E347D550023B2B8 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 		BD41F9BB1E0AA31400438762 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BDD96A4E1E359E5D002B447E /* HomeModel */,
 				BD8F8F251E0AAA7A003A9614 /* HomeViewController.swift */,
 				BD6DA47F1E0D172200C8C2B1 /* Home.storyboard */,
 				BDBC32B51E1273D3009980CF /* PopoverViewController.swift */,
@@ -302,6 +305,14 @@
 				BD50D1EF1E110500008209B9 /* VisitorView.xib */,
 			);
 			path = VisitorView;
+			sourceTree = "<group>";
+		};
+		BDD96A4E1E359E5D002B447E /* HomeModel */ = {
+			isa = PBXGroup;
+			children = (
+				BDD96A4F1E359E82002B447E /* Status.swift */,
+			);
+			path = HomeModel;
 			sourceTree = "<group>";
 		};
 		BDFB888F1E347CFF0023B2B8 /* WelcomeView */ = {
@@ -523,6 +534,7 @@
 				BD50D1EC1E1102FC008209B9 /* BaseViewController.swift in Sources */,
 				BD50D1EE1E1104F1008209B9 /* VisitorView.swift in Sources */,
 				BD8F8F2A1E0AAAB2003A9614 /* DiscoverViewController.swift in Sources */,
+				BDD96A501E359E82002B447E /* Status.swift in Sources */,
 				BD50D1E91E10DF7B008209B9 /* UIButton+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
