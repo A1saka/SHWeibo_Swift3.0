@@ -16,6 +16,9 @@
 		BD1D25961E2E3C4000C958BD /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1D25941E2E3C4000C958BD /* OAuthViewController.swift */; };
 		BD1D25971E2E3C4000C958BD /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD1D25951E2E3C4000C958BD /* OAuthViewController.xib */; };
 		BD29B12E1E3445650088628E /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29B12D1E3445650088628E /* UserAccountViewModel.swift */; };
+		BD4D1C971E373EFE000C122D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D1C961E373EFE000C122D /* User.swift */; };
+		BD4D1C991E37433E000C122D /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D1C981E37433E000C122D /* StatusViewModel.swift */; };
+		BD4D1C9B1E375B30000C122D /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D1C9A1E375B30000C122D /* HomeViewCell.swift */; };
 		BD50D1E91E10DF7B008209B9 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50D1E81E10DF7B008209B9 /* UIButton+Extension.swift */; };
 		BD50D1EC1E1102FC008209B9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50D1EB1E1102FC008209B9 /* BaseViewController.swift */; };
 		BD50D1EE1E1104F1008209B9 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50D1ED1E1104F1008209B9 /* VisitorView.swift */; };
@@ -80,6 +83,9 @@
 		BD1D25941E2E3C4000C958BD /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		BD1D25951E2E3C4000C958BD /* OAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
 		BD29B12D1E3445650088628E /* UserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		BD4D1C961E373EFE000C122D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BD4D1C981E37433E000C122D /* StatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		BD4D1C9A1E375B30000C122D /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		BD50D1E81E10DF7B008209B9 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		BD50D1EB1E1102FC008209B9 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BD50D1ED1E1104F1008209B9 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
@@ -243,6 +249,7 @@
 				BDD96A4E1E359E5D002B447E /* HomeModel */,
 				BD8F8F251E0AAA7A003A9614 /* HomeViewController.swift */,
 				BD6DA47F1E0D172200C8C2B1 /* Home.storyboard */,
+				BD4D1C9A1E375B30000C122D /* HomeViewCell.swift */,
 				BDBC32B51E1273D3009980CF /* PopoverViewController.swift */,
 				BDBC32B61E1273D3009980CF /* PopoverViewController.xib */,
 				BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */,
@@ -314,6 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				BDD96A4F1E359E82002B447E /* Status.swift */,
+				BD4D1C961E373EFE000C122D /* User.swift */,
+				BD4D1C981E37433E000C122D /* StatusViewModel.swift */,
 			);
 			path = HomeModel;
 			sourceTree = "<group>";
@@ -538,8 +547,11 @@
 				BD50D1EC1E1102FC008209B9 /* BaseViewController.swift in Sources */,
 				BD50D1EE1E1104F1008209B9 /* VisitorView.swift in Sources */,
 				BD8F8F2A1E0AAAB2003A9614 /* DiscoverViewController.swift in Sources */,
+				BD4D1C9B1E375B30000C122D /* HomeViewCell.swift in Sources */,
+				BD4D1C991E37433E000C122D /* StatusViewModel.swift in Sources */,
 				BDD96A501E359E82002B447E /* Status.swift in Sources */,
 				BD50D1E91E10DF7B008209B9 /* UIButton+Extension.swift in Sources */,
+				BD4D1C971E373EFE000C122D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

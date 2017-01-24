@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OoA-lC-4Y5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OoA-lC-4Y5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,18 +12,100 @@
         <scene sceneID="Jak-gY-APV">
             <objects>
                 <tableViewController id="4wR-WY-Y8m" customClass="HomeViewController" customModule="SHWeibo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SmC-Li-mps">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="248" sectionHeaderHeight="28" sectionFooterHeight="28" id="SmC-Li-mps">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" id="zY3-3O-Wuq">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" rowHeight="248" id="zY3-3O-Wuq" customClass="HomeViewCell" customModule="SHWeibo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="248"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zY3-3O-Wuq" id="OWM-6h-6a1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="247"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_small" translatesAutoresizingMaskIntoConstraints="NO" id="vG7-bk-HRs" userLabel="头像">
+                                            <rect key="frame" x="15" y="15" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="MjK-Sd-DgW"/>
+                                                <constraint firstAttribute="height" constant="40" id="qJM-cT-bmT"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_vip" translatesAutoresizingMaskIntoConstraints="NO" id="760-oD-ZX8" userLabel="大V">
+                                            <rect key="frame" x="38" y="38" width="17" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="a4b-zU-N1d"/>
+                                                <constraint firstAttribute="width" constant="17" id="egd-Fz-dOP"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A1saka" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbI-bC-e8A" userLabel="昵称">
+                                            <rect key="frame" x="65" y="15" width="48" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_icon_membership_level1" translatesAutoresizingMaskIntoConstraints="NO" id="SsK-0a-D9n" userLabel="vip">
+                                            <rect key="frame" x="118" y="17" width="14" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="14" id="4pk-mX-F2i"/>
+                                                <constraint firstAttribute="height" constant="14" id="HEc-xb-HAW"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTf-of-iiT" userLabel="时间">
+                                            <rect key="frame" x="65" y="41" width="41" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来自iPhone 7 plus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3n-hE-Kkn" userLabel="来源">
+                                            <rect key="frame" x="116" y="41" width="93" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World !!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlF-f5-vJV" userLabel="微博内容">
+                                            <rect key="frame" x="15" y="65" width="103" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="103" id="dol-AM-9lp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BbI-bC-e8A" firstAttribute="leading" secondItem="vG7-bk-HRs" secondAttribute="trailing" constant="10" id="49q-r3-IYz"/>
+                                        <constraint firstItem="BbI-bC-e8A" firstAttribute="top" secondItem="vG7-bk-HRs" secondAttribute="top" id="FSK-pR-gs3"/>
+                                        <constraint firstItem="QlF-f5-vJV" firstAttribute="leading" secondItem="vG7-bk-HRs" secondAttribute="leading" id="MjE-mi-ITi"/>
+                                        <constraint firstItem="u3n-hE-Kkn" firstAttribute="centerY" secondItem="VTf-of-iiT" secondAttribute="centerY" id="PPr-wh-Xys"/>
+                                        <constraint firstItem="vG7-bk-HRs" firstAttribute="leading" secondItem="OWM-6h-6a1" secondAttribute="leading" constant="15" id="TmH-z7-GDl"/>
+                                        <constraint firstItem="VTf-of-iiT" firstAttribute="leading" secondItem="BbI-bC-e8A" secondAttribute="leading" id="VXS-BB-jMY"/>
+                                        <constraint firstItem="SsK-0a-D9n" firstAttribute="centerY" secondItem="BbI-bC-e8A" secondAttribute="centerY" id="aCL-L8-Gcj"/>
+                                        <constraint firstItem="760-oD-ZX8" firstAttribute="bottom" secondItem="vG7-bk-HRs" secondAttribute="bottom" id="gDd-dd-zVl"/>
+                                        <constraint firstItem="QlF-f5-vJV" firstAttribute="top" secondItem="VTf-of-iiT" secondAttribute="bottom" constant="10" id="hA9-e6-Ie9"/>
+                                        <constraint firstItem="VTf-of-iiT" firstAttribute="bottom" secondItem="vG7-bk-HRs" secondAttribute="bottom" id="sIk-b4-Qww"/>
+                                        <constraint firstItem="SsK-0a-D9n" firstAttribute="leading" secondItem="BbI-bC-e8A" secondAttribute="trailing" constant="5" id="tJ1-cE-S5f"/>
+                                        <constraint firstItem="760-oD-ZX8" firstAttribute="trailing" secondItem="vG7-bk-HRs" secondAttribute="trailing" id="xJN-0n-TJm"/>
+                                        <constraint firstItem="u3n-hE-Kkn" firstAttribute="leading" secondItem="VTf-of-iiT" secondAttribute="trailing" constant="10" id="xP3-qT-zgW"/>
+                                        <constraint firstItem="vG7-bk-HRs" firstAttribute="top" secondItem="OWM-6h-6a1" secondAttribute="top" constant="15" id="ygt-cS-9Rf"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="WeiboContent" destination="QlF-f5-vJV" id="7Z3-nM-SXj"/>
+                                    <outlet property="contentLabelW" destination="dol-AM-9lp" id="9v9-ke-Xj8"/>
+                                    <outlet property="headView" destination="vG7-bk-HRs" id="epU-1f-OH0"/>
+                                    <outlet property="screenNameLabel" destination="BbI-bC-e8A" id="VrE-rt-syT"/>
+                                    <outlet property="sourceLabel" destination="u3n-hE-Kkn" id="3Y5-yx-g0h"/>
+                                    <outlet property="timeLabel" destination="VTf-of-iiT" id="M2d-K0-KLu"/>
+                                    <outlet property="vertifiedView" destination="760-oD-ZX8" id="xE4-76-MDl"/>
+                                    <outlet property="vipView" destination="SsK-0a-D9n" id="HD4-bK-XJB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -35,7 +117,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZH-HE-DfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="-801"/>
+            <point key="canvasLocation" x="1021.6" y="-818.14092953523243"/>
         </scene>
         <!--首页-->
         <scene sceneID="G3v-6p-zeH">
@@ -57,6 +139,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="avatar_default_small" width="34" height="34"/>
+        <image name="avatar_vip" width="17" height="17"/>
+        <image name="common_icon_membership_level1" width="14" height="14"/>
         <image name="tabbar_home" width="30" height="30"/>
         <image name="tabbar_home_highlighted" width="30" height="30"/>
     </resources>
