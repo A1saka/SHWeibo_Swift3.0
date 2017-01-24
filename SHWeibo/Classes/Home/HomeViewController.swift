@@ -33,6 +33,9 @@ class HomeViewController: BaseViewController {
         
         // 请求主页微博数据
         loadWeiboData()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
     }
 }
 
