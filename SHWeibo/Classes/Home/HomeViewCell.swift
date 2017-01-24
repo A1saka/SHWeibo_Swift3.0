@@ -38,7 +38,10 @@ class HomeViewCell: UITableViewCell {
             screenNameLabel.text = viewModel.status?.user?.screen_name
             vipView.image = viewModel.vipImage
             timeLabel.text = viewModel.createAtText
-            sourceLabel.text = viewModel.status?.text
+            WeiboContent.text = viewModel.status?.text
+            
+            // 设置会员昵称文字颜色
+            screenNameLabel.textColor = viewModel.vipImage == nil ? UIColor.black : UIColor(red:0.961, green:0.451, blue:0.106, alpha:1)
             
         }
     
