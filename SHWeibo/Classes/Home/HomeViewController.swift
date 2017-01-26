@@ -27,7 +27,7 @@ class HomeViewController: BaseViewController {
         if  !isLogin {
             return
         }
-        
+
         // 设置导航栏
         setupNaviBar()
         

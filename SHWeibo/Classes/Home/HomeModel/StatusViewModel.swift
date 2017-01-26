@@ -20,6 +20,7 @@ class StatusViewModel: NSObject {
     var verifiedImage : UIImage?    // 处理认证
     var vipImage : UIImage?         // 处理vip等级
     var profileURL : URL?           // 处理用户头像的url地址
+    var picURLs : [URL] = [URL]()   // 处理微博配图数据
     
     
     
@@ -61,5 +62,16 @@ class StatusViewModel: NSObject {
         // 用户头像url地址处理
         let profileURLString = status.user?.profile_image_url ?? ""
         profileURL = URL(string: profileURLString)
+        
+        //处理微博配图数据
+        if let picURLsDicts = status.pic_urls {
+            for picURLsDict in picURLsDicts {
+                guard let picURLString = picURLsDict["thumbnail_pic"] else {
+                    continue
+                }
+                picURLs.append(URL(string: picURLString)!)
+            }
+        
+        }
     }
 }

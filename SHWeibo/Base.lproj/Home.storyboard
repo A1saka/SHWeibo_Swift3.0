@@ -70,7 +70,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World !!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlF-f5-vJV" userLabel="微博内容">
-                                            <rect key="frame" x="15" y="65" width="103" height="133"/>
+                                            <rect key="frame" x="15" y="65" width="103" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="103" id="dol-AM-9lp"/>
                                             </constraints>
@@ -151,18 +151,43 @@
                                                 <constraint firstItem="Hcq-wz-h11" firstAttribute="top" secondItem="5Wi-3d-Jxt" secondAttribute="top" id="wto-f4-52P"/>
                                             </constraints>
                                         </view>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JnS-Ql-x0V">
+                                            <rect key="frame" x="15" y="93" width="240" height="87"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="87" id="7GB-aN-vh6"/>
+                                                <constraint firstAttribute="width" constant="240" id="yWw-4c-fnS" userLabel="Pic ViewW Constraint"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NPx-ls-LOC">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="N5H-D7-U1G">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </view>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="JnS-Ql-x0V" firstAttribute="leading" secondItem="vG7-bk-HRs" secondAttribute="leading" id="3zc-xK-SJc"/>
                                         <constraint firstItem="BbI-bC-e8A" firstAttribute="leading" secondItem="vG7-bk-HRs" secondAttribute="trailing" constant="10" id="49q-r3-IYz"/>
                                         <constraint firstItem="BbI-bC-e8A" firstAttribute="top" secondItem="vG7-bk-HRs" secondAttribute="top" id="FSK-pR-gs3"/>
                                         <constraint firstItem="QlF-f5-vJV" firstAttribute="leading" secondItem="vG7-bk-HRs" secondAttribute="leading" id="MjE-mi-ITi"/>
                                         <constraint firstItem="u3n-hE-Kkn" firstAttribute="centerY" secondItem="VTf-of-iiT" secondAttribute="centerY" id="PPr-wh-Xys"/>
-                                        <constraint firstItem="zo9-q7-UuQ" firstAttribute="top" secondItem="QlF-f5-vJV" secondAttribute="bottom" constant="10" id="RcG-YK-V5M"/>
                                         <constraint firstItem="vG7-bk-HRs" firstAttribute="leading" secondItem="OWM-6h-6a1" secondAttribute="leading" constant="15" id="TmH-z7-GDl"/>
                                         <constraint firstItem="VTf-of-iiT" firstAttribute="leading" secondItem="BbI-bC-e8A" secondAttribute="leading" id="VXS-BB-jMY"/>
                                         <constraint firstAttribute="trailing" secondItem="zo9-q7-UuQ" secondAttribute="trailing" id="WR4-fw-zzm"/>
                                         <constraint firstAttribute="bottom" secondItem="zo9-q7-UuQ" secondAttribute="bottom" id="Xud-8k-Tok"/>
                                         <constraint firstItem="SsK-0a-D9n" firstAttribute="centerY" secondItem="BbI-bC-e8A" secondAttribute="centerY" id="aCL-L8-Gcj"/>
+                                        <constraint firstItem="JnS-Ql-x0V" firstAttribute="top" secondItem="QlF-f5-vJV" secondAttribute="bottom" constant="10" id="aKM-NH-pe8"/>
                                         <constraint firstItem="760-oD-ZX8" firstAttribute="bottom" secondItem="vG7-bk-HRs" secondAttribute="bottom" id="gDd-dd-zVl"/>
                                         <constraint firstItem="QlF-f5-vJV" firstAttribute="top" secondItem="VTf-of-iiT" secondAttribute="bottom" constant="10" id="hA9-e6-Ie9"/>
                                         <constraint firstItem="zo9-q7-UuQ" firstAttribute="leading" secondItem="OWM-6h-6a1" secondAttribute="leading" id="s9j-v0-6jl"/>
@@ -177,6 +202,8 @@
                                     <outlet property="WeiboContent" destination="QlF-f5-vJV" id="7Z3-nM-SXj"/>
                                     <outlet property="contentLabelW" destination="dol-AM-9lp" id="9v9-ke-Xj8"/>
                                     <outlet property="headView" destination="vG7-bk-HRs" id="epU-1f-OH0"/>
+                                    <outlet property="picViewHConstraint" destination="7GB-aN-vh6" id="7DS-Ai-NPQ"/>
+                                    <outlet property="picViewWConstraint" destination="yWw-4c-fnS" id="Upy-mc-PZi"/>
                                     <outlet property="screenNameLabel" destination="BbI-bC-e8A" id="VrE-rt-syT"/>
                                     <outlet property="sourceLabel" destination="u3n-hE-Kkn" id="3Y5-yx-g0h"/>
                                     <outlet property="timeLabel" destination="VTf-of-iiT" id="M2d-K0-KLu"/>
@@ -194,7 +221,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZH-HE-DfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="-955"/>
+            <point key="canvasLocation" x="1013.6" y="-955.77211394302856"/>
         </scene>
         <!--首页-->
         <scene sceneID="G3v-6p-zeH">
@@ -212,7 +239,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQr-VY-Or3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-135" y="-801"/>
+            <point key="canvasLocation" x="-1148" y="-956"/>
         </scene>
     </scenes>
     <resources>
