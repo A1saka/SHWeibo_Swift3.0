@@ -18,12 +18,9 @@ class BaseViewController: UITableViewController {
     
     // MARK:- 系统回调函数
     override func loadView() {
-        
         isLogin ? super.loadView() : setupvisitorView()
         
-        
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

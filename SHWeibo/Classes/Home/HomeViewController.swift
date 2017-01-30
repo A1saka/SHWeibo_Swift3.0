@@ -17,7 +17,7 @@ class HomeViewController: BaseViewController {
 
     fileprivate lazy var viewModels : [StatusViewModel] = [StatusViewModel]()
     
-    // MARK:- viewDidLoad
+    // MARK:- 系统调用函数
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +34,7 @@ class HomeViewController: BaseViewController {
         // 请求主页微博数据
         loadWeiboData()
         
+        // 设置cell高度
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
     }

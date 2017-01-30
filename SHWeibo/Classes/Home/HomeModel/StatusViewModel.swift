@@ -59,6 +59,7 @@ class StatusViewModel: NSObject {
         if mbrank > 0 && mbrank <= 6 {
             vipImage = UIImage(named: "common_icon_membership_level\(mbrank)")
         }
+        
         // 用户头像url地址处理
         let profileURLString = status.user?.profile_image_url ?? ""
         profileURL = URL(string: profileURLString)
