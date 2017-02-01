@@ -70,7 +70,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World !!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlF-f5-vJV" userLabel="微博内容">
-                                            <rect key="frame" x="15" y="65" width="103" height="18"/>
+                                            <rect key="frame" x="15" y="65" width="103" height="38"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="103" id="dol-AM-9lp"/>
                                             </constraints>
@@ -151,9 +151,9 @@
                                                 <constraint firstItem="Hcq-wz-h11" firstAttribute="top" secondItem="5Wi-3d-Jxt" secondAttribute="top" id="wto-f4-52P"/>
                                             </constraints>
                                         </view>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JnS-Ql-x0V">
-                                            <rect key="frame" x="15" y="93" width="240" height="87"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JnS-Ql-x0V" customClass="PictureCollectionView" customModule="SHWeibo" customModuleProvider="target">
+                                            <rect key="frame" x="15" y="113" width="240" height="87"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="87" id="7GB-aN-vh6"/>
                                                 <constraint firstAttribute="width" constant="240" id="yWw-4c-fnS" userLabel="Pic ViewW Constraint"/>
@@ -165,13 +165,27 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="N5H-D7-U1G">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PictureCell" id="N5H-D7-U1G" customClass="PicCollectionViewCell" customModule="SHWeibo" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rKy-2d-W4r">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            </imageView>
+                                                        </subviews>
                                                     </view>
+                                                    <constraints>
+                                                        <constraint firstItem="rKy-2d-W4r" firstAttribute="top" secondItem="N5H-D7-U1G" secondAttribute="top" id="diC-qd-BzR"/>
+                                                        <constraint firstAttribute="bottom" secondItem="rKy-2d-W4r" secondAttribute="bottom" id="gH6-Yf-xfY"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rKy-2d-W4r" secondAttribute="trailing" id="htA-JJ-afh"/>
+                                                        <constraint firstItem="rKy-2d-W4r" firstAttribute="leading" secondItem="N5H-D7-U1G" secondAttribute="leading" id="lob-Nd-rAW"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="iconView" destination="rKy-2d-W4r" id="E6u-a0-KLS"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
@@ -186,6 +200,7 @@
                                         <constraint firstItem="VTf-of-iiT" firstAttribute="leading" secondItem="BbI-bC-e8A" secondAttribute="leading" id="VXS-BB-jMY"/>
                                         <constraint firstAttribute="trailing" secondItem="zo9-q7-UuQ" secondAttribute="trailing" id="WR4-fw-zzm"/>
                                         <constraint firstAttribute="bottom" secondItem="zo9-q7-UuQ" secondAttribute="bottom" id="Xud-8k-Tok"/>
+                                        <constraint firstItem="zo9-q7-UuQ" firstAttribute="top" secondItem="JnS-Ql-x0V" secondAttribute="bottom" priority="700" constant="8" id="a3r-xS-9Zp"/>
                                         <constraint firstItem="SsK-0a-D9n" firstAttribute="centerY" secondItem="BbI-bC-e8A" secondAttribute="centerY" id="aCL-L8-Gcj"/>
                                         <constraint firstItem="JnS-Ql-x0V" firstAttribute="top" secondItem="QlF-f5-vJV" secondAttribute="bottom" constant="10" id="aKM-NH-pe8"/>
                                         <constraint firstItem="760-oD-ZX8" firstAttribute="bottom" secondItem="vG7-bk-HRs" secondAttribute="bottom" id="gDd-dd-zVl"/>
@@ -199,6 +214,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="PictureCollectionView" destination="JnS-Ql-x0V" id="Cp4-1J-g2m"/>
                                     <outlet property="WeiboContent" destination="QlF-f5-vJV" id="7Z3-nM-SXj"/>
                                     <outlet property="contentLabelW" destination="dol-AM-9lp" id="9v9-ke-Xj8"/>
                                     <outlet property="headView" destination="vG7-bk-HRs" id="epU-1f-OH0"/>

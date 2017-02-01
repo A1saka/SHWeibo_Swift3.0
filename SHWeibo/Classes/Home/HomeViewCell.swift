@@ -9,8 +9,8 @@
 import UIKit
 import SDWebImage
 
-private let edgeMargin : CGFloat = 10
-private let imageMargin : CGFloat = 8
+private let edgeMargin : CGFloat = 15
+private let imageMargin : CGFloat = 10
 
 class HomeViewCell: UITableViewCell {
     
@@ -22,6 +22,9 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var WeiboContent: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
+    
+    @IBOutlet weak var PictureCollectionView: PictureCollectionView!
+    
     
     @IBOutlet weak var contentLabelW: NSLayoutConstraint!
     
@@ -50,6 +53,9 @@ class HomeViewCell: UITableViewCell {
             let picViewSize = calculatePicViewSize(count: viewModel.picURLs.count)
             picViewWConstraint.constant = picViewSize.width
             picViewHConstraint.constant = picViewSize.height
+            
+            // 设置pictureCollectionView数据
+            PictureCollectionView.pictureURLs = viewModel.picURLs
         }
     
     }
@@ -57,8 +63,14 @@ class HomeViewCell: UITableViewCell {
     // MARK:- 系统调用函数
     override func awakeFromNib() {
         super.awakeFromNib()
-   
+        // 设置微博正文的宽度约束
         contentLabelW.constant = UIScreen.main.bounds.width - 2 * edgeMargin
+        
+        // 取出图片cell的布局
+        let layout = PictureCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let imageViewWH = (UIScreen.main.bounds.width - 2 * edgeMargin - 2 * imageMargin) / 3
+        
+        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
         
     }
 
@@ -73,8 +85,14 @@ extension HomeViewCell {
         if count == 0 {
             return CGSize.zero
         }
+        // 1张图
+//        if count == 1 {
+//            
+//            return CGSize(width: <#T##CGFloat#>, height: <#T##CGFloat#>)
+//        }
         // 4张图
         let imageViewWH = (UIScreen.main.bounds.width - 2 * edgeMargin - 2 * imageMargin) / 3
+        
         if count == 4 {
             let picViewWH = imageViewWH * 2 + imageMargin
             return CGSize(width: picViewWH, height: picViewWH)
@@ -83,10 +101,16 @@ extension HomeViewCell {
         // 其他数量图片
         let rows = CGFloat((count - 1) / 3 + 1)
         let picViewH = rows * imageViewWH + (rows - 1) * imageMargin
-        let picVieww = UIScreen.main.bounds.width - 2 * edgeMargin
-        return CGSize(width: picVieww, height: picViewH)
+        let picViewW = UIScreen.main.bounds.width - 2 * edgeMargin
+        return CGSize(width: picViewW, height: picViewH)
         
     }
 
 
 }
+
+
+
+
+
+

@@ -23,6 +23,10 @@
 		BD50D1EC1E1102FC008209B9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50D1EB1E1102FC008209B9 /* BaseViewController.swift */; };
 		BD50D1EE1E1104F1008209B9 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50D1ED1E1104F1008209B9 /* VisitorView.swift */; };
 		BD50D1F01E110500008209B9 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD50D1EF1E110500008209B9 /* VisitorView.xib */; };
+		BD60EA661E419A91006F9511 /* PictureCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60EA651E419A91006F9511 /* PictureCollectionView.swift */; };
+		BD60EA6B1E41A07F006F9511 /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60EA681E41A07F006F9511 /* PopoverPresentationController.swift */; };
+		BD60EA6C1E41A07F006F9511 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD60EA691E41A07F006F9511 /* PopoverViewController.swift */; };
+		BD60EA6D1E41A07F006F9511 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD60EA6A1E41A07F006F9511 /* PopoverViewController.xib */; };
 		BD6DA4811E0D172200C8C2B1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6DA47F1E0D172200C8C2B1 /* Home.storyboard */; };
 		BD6DA4831E0D174200C8C2B1 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6DA4821E0D174200C8C2B1 /* Message.storyboard */; };
 		BD6DA4861E0D175A00C8C2B1 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6DA4841E0D175A00C8C2B1 /* Discover.storyboard */; };
@@ -35,9 +39,6 @@
 		BD8F8F2A1E0AAAB2003A9614 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F8F291E0AAAB2003A9614 /* DiscoverViewController.swift */; };
 		BD8F8F2C1E0AAABF003A9614 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8F8F2B1E0AAABF003A9614 /* ProfileViewController.swift */; };
 		BD9B197D1E32FA2400C2B9CE /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B197C1E32FA2400C2B9CE /* UserAccount.swift */; };
-		BDBC32B71E1273D3009980CF /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC32B51E1273D3009980CF /* PopoverViewController.swift */; };
-		BDBC32B81E1273D3009980CF /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDBC32B61E1273D3009980CF /* PopoverViewController.xib */; };
-		BDBC32BA1E127F2E009980CF /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */; };
 		BDC4FE971E31AFF100BC2E6C /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC4FE961E31AFF100BC2E6C /* NetworkTool.swift */; };
 		BDD96A501E359E82002B447E /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD96A4F1E359E82002B447E /* Status.swift */; };
 		BDD96A8E1E362E3D002B447E /* Date-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD96A8D1E362E3D002B447E /* Date-Extension.swift */; };
@@ -90,6 +91,10 @@
 		BD50D1EB1E1102FC008209B9 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BD50D1ED1E1104F1008209B9 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		BD50D1EF1E110500008209B9 /* VisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		BD60EA651E419A91006F9511 /* PictureCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureCollectionView.swift; sourceTree = "<group>"; };
+		BD60EA681E41A07F006F9511 /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
+		BD60EA691E41A07F006F9511 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		BD60EA6A1E41A07F006F9511 /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		BD6DA4801E0D172200C8C2B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		BD6DA4821E0D174200C8C2B1 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Message.storyboard; path = ../../Message.storyboard; sourceTree = "<group>"; };
 		BD6DA4851E0D175A00C8C2B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
@@ -102,9 +107,6 @@
 		BD8F8F291E0AAAB2003A9614 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		BD8F8F2B1E0AAABF003A9614 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BD9B197C1E32FA2400C2B9CE /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
-		BDBC32B51E1273D3009980CF /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
-		BDBC32B61E1273D3009980CF /* PopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
-		BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		BDC4FE961E31AFF100BC2E6C /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkTool.swift; path = ../../NetworkTool.swift; sourceTree = "<group>"; };
 		BDD96A4F1E359E82002B447E /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		BDD96A8D1E362E3D002B447E /* Date-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date-Extension.swift"; sourceTree = "<group>"; };
@@ -247,12 +249,11 @@
 			isa = PBXGroup;
 			children = (
 				BDD96A4E1E359E5D002B447E /* HomeModel */,
+				BD60EA671E419FDA006F9511 /* PopoverView */,
 				BD8F8F251E0AAA7A003A9614 /* HomeViewController.swift */,
 				BD6DA47F1E0D172200C8C2B1 /* Home.storyboard */,
 				BD4D1C9A1E375B30000C122D /* HomeViewCell.swift */,
-				BDBC32B51E1273D3009980CF /* PopoverViewController.swift */,
-				BDBC32B61E1273D3009980CF /* PopoverViewController.xib */,
-				BDBC32B91E127F2E009980CF /* PopoverPresentationController.swift */,
+				BD60EA651E419A91006F9511 /* PictureCollectionView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -315,6 +316,16 @@
 				BD50D1EF1E110500008209B9 /* VisitorView.xib */,
 			);
 			path = VisitorView;
+			sourceTree = "<group>";
+		};
+		BD60EA671E419FDA006F9511 /* PopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				BD60EA681E41A07F006F9511 /* PopoverPresentationController.swift */,
+				BD60EA691E41A07F006F9511 /* PopoverViewController.swift */,
+				BD60EA6A1E41A07F006F9511 /* PopoverViewController.xib */,
+			);
+			path = PopoverView;
 			sourceTree = "<group>";
 		};
 		BDD96A4E1E359E5D002B447E /* HomeModel */ = {
@@ -449,10 +460,10 @@
 				BD1D25971E2E3C4000C958BD /* OAuthViewController.xib in Resources */,
 				BD04C0FE1E0A6C5C0021FF19 /* Assets.xcassets in Resources */,
 				BD6DA4831E0D174200C8C2B1 /* Message.storyboard in Resources */,
-				BDBC32B81E1273D3009980CF /* PopoverViewController.xib in Resources */,
 				BD04C0FC1E0A6C5C0021FF19 /* Main.storyboard in Resources */,
 				BDFB88931E347D550023B2B8 /* WelcomeViewController.xib in Resources */,
 				BD50D1F01E110500008209B9 /* VisitorView.xib in Resources */,
+				BD60EA6D1E41A07F006F9511 /* PopoverViewController.xib in Resources */,
 				BD6DA4811E0D172200C8C2B1 /* Home.storyboard in Resources */,
 				BD6DA4881E0D177300C8C2B1 /* Profile.storyboard in Resources */,
 				BD6DA4861E0D175A00C8C2B1 /* Discover.storyboard in Resources */,
@@ -530,14 +541,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD1D25961E2E3C4000C958BD /* OAuthViewController.swift in Sources */,
-				BDBC32BA1E127F2E009980CF /* PopoverPresentationController.swift in Sources */,
+				BD60EA661E419A91006F9511 /* PictureCollectionView.swift in Sources */,
 				BD8F8F2C1E0AAABF003A9614 /* ProfileViewController.swift in Sources */,
 				BDD96A8E1E362E3D002B447E /* Date-Extension.swift in Sources */,
 				BD04C0F71E0A6C5B0021FF19 /* AppDelegate.swift in Sources */,
 				BDC4FE971E31AFF100BC2E6C /* NetworkTool.swift in Sources */,
 				BD8AC4F21E1148AD007CECDE /* UIBarButtonItem+Extension.swift in Sources */,
 				BD8F8F241E0AA94D003A9614 /* MainViewController.swift in Sources */,
-				BDBC32B71E1273D3009980CF /* PopoverViewController.swift in Sources */,
+				BD60EA6B1E41A07F006F9511 /* PopoverPresentationController.swift in Sources */,
 				BD29B12E1E3445650088628E /* UserAccountViewModel.swift in Sources */,
 				BDFB88921E347D550023B2B8 /* WelcomeViewController.swift in Sources */,
 				BD9B197D1E32FA2400C2B9CE /* UserAccount.swift in Sources */,
@@ -545,6 +556,7 @@
 				BD8F8F281E0AAAA0003A9614 /* MessageViewController.swift in Sources */,
 				BD8F8F261E0AAA7A003A9614 /* HomeViewController.swift in Sources */,
 				BD50D1EC1E1102FC008209B9 /* BaseViewController.swift in Sources */,
+				BD60EA6C1E41A07F006F9511 /* PopoverViewController.swift in Sources */,
 				BD50D1EE1E1104F1008209B9 /* VisitorView.swift in Sources */,
 				BD8F8F2A1E0AAAB2003A9614 /* DiscoverViewController.swift in Sources */,
 				BD4D1C9B1E375B30000C122D /* HomeViewCell.swift in Sources */,
