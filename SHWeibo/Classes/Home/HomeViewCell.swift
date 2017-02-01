@@ -66,11 +66,6 @@ class HomeViewCell: UITableViewCell {
         // 设置微博正文的宽度约束
         contentLabelW.constant = UIScreen.main.bounds.width - 2 * edgeMargin
         
-        // 取出图片cell的布局
-        let layout = PictureCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let imageViewWH = (UIScreen.main.bounds.width - 2 * edgeMargin - 2 * imageMargin) / 3
-        
-        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
         
     }
 
@@ -79,20 +74,30 @@ class HomeViewCell: UITableViewCell {
 
 // MARK:- 计算宽高约束
 extension HomeViewCell {
-
     fileprivate func calculatePicViewSize (count : Int) -> CGSize {
         // 无图
         if count == 0 {
             return CGSize.zero
         }
+        // 取出图片cell的布局
+        let layout = PictureCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
         // 1张图
-//        if count == 1 {
-//            
-//            return CGSize(width: <#T##CGFloat#>, height: <#T##CGFloat#>)
-//        }
+        if count == 1 {
+            // 1.取出图片
+            let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: viewModel?.picURLs.last?.absoluteString)
+            // 设置一张图片时layout的itemSize
+            layout.itemSize = CGSize(width: image!.size.width * 2, height: image!.size.height * 2)
+            
+            
+            return CGSize(width: image!.size.width * 2, height: image!.size.height * 2)
+        }
         // 4张图
         let imageViewWH = (UIScreen.main.bounds.width - 2 * edgeMargin - 2 * imageMargin) / 3
         
+        // 设置其他张图片时layout的itemSize
+        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
+        // 4张配图
         if count == 4 {
             let picViewWH = imageViewWH * 2 + imageMargin
             return CGSize(width: picViewWH, height: picViewWH)
@@ -105,7 +110,6 @@ extension HomeViewCell {
         return CGSize(width: picViewW, height: picViewH)
         
     }
-
 
 }
 

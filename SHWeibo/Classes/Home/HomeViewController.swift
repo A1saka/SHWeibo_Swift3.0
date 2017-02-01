@@ -8,6 +8,7 @@
 
 import UIKit
 import AFNetworking
+import SDWebImage
 
 class HomeViewController: BaseViewController {
 
@@ -174,13 +175,36 @@ extension HomeViewController {
                 self.viewModels.append(viewModels)
             }
             
-            self.tableView.reloadData()
+            // 缓存图片
+            self.cacheImage(viewModels: self.viewModels)
             
         }) { (operation, error) in
             print(error)
         }
     
     }
+    fileprivate func cacheImage(viewModels: [StatusViewModel]){
+        // 创建group
+        let dispatchGroup = DispatchGroup()
+        // 缓存图片
+        
+        for viewmodel in viewModels {
+            for picURL in viewmodel.picURLs{
+                dispatchGroup.enter()
+                SDWebImageManager.shared().downloadImage(with: picURL, options: [], progress: nil, completed: { (_, _, _, _, _) in
+                    //             print("-------")
+                    dispatchGroup.leave()
+                })
+            }
+        }
+        // 刷新表格
+        dispatchGroup.notify(queue: DispatchQueue.main){
+            
+            self.tableView.reloadData()
+            //            print("刷新表格")
+        }
+    }
+
 
 }
 
