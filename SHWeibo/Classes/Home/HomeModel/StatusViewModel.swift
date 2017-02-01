@@ -34,6 +34,8 @@ class StatusViewModel: NSObject {
             let length = (source as NSString).range(of: "</").location - startIndex
             
             sourceText = (source as NSString).substring(with: NSRange(location: startIndex, length: length))
+            let comeString = "来自"
+            sourceText = comeString + (sourceText ?? "")
         }
         
         // 处理时间
@@ -65,7 +67,8 @@ class StatusViewModel: NSObject {
         profileURL = URL(string: profileURLString)
         
         //处理微博配图数据
-        if let picURLsDicts = status.pic_urls {
+        let picURLDicts = status.pic_urls!.count != 0 ? status.pic_urls : status.retweeted_status?.pic_urls
+        if let picURLsDicts = picURLDicts {
             for picURLsDict in picURLsDicts {
                 guard let picURLString = picURLsDict["thumbnail_pic"] else {
                     continue

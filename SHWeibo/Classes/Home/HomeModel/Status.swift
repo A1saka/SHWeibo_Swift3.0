@@ -17,7 +17,7 @@ class Status: NSObject {
     
     var user : User?
     var pic_urls : [[String : String]]? // 微博配图
-//    var retweet_status = <#value#>
+    var retweeted_status : Status? // 转发微博
     
   
     
@@ -26,10 +26,15 @@ class Status: NSObject {
         super.init()
         
         setValuesForKeys(dict)
-        // 用户字典 -> 模型
+        // 用户字典 -> 用户模型对象
         if let userDict = dict["user"] as? [String : AnyObject] {
             user = User(dict: userDict)
         }
+        // 转发微博的字典 -> 转发微博的模型对象
+        if let retweetStatusDict = dict["retweeted_status"] as? [String : AnyObject] {
+            retweeted_status = Status(dict: retweetStatusDict)
+        }
+        
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}
