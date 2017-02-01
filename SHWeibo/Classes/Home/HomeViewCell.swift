@@ -45,6 +45,7 @@ class HomeViewCell: UITableViewCell {
             vipView.image = viewModel.vipImage
             timeLabel.text = viewModel.createAtText
             WeiboContent.text = viewModel.status?.text
+            sourceLabel.text = viewModel.sourceText
             
             // 设置会员昵称文字颜色
             screenNameLabel.textColor = viewModel.vipImage == nil ? UIColor.black : UIColor(red:0.961, green:0.451, blue:0.106, alpha:1)
@@ -99,7 +100,7 @@ extension HomeViewCell {
         layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
         // 4张配图
         if count == 4 {
-            let picViewWH = imageViewWH * 2 + imageMargin
+            let picViewWH = 240
             return CGSize(width: picViewWH, height: picViewWH)
             
         }

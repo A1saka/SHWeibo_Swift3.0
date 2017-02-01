@@ -17,6 +17,7 @@ class Status: NSObject {
     
     var user : User?
     var pic_urls : [[String : String]]? // 微博配图
+//    var retweet_status = <#value#>
     
   
     
