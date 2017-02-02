@@ -22,15 +22,15 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var WeiboContent: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
-    
     @IBOutlet weak var PictureCollectionView: PictureCollectionView!
-    
+    @IBOutlet weak var retweetedBackground: UIView!
     @IBOutlet weak var retweetedContentLabel: UILabel!
-    
+
+    // 约束属性
+    @IBOutlet weak var picViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentLabelW: NSLayoutConstraint!
-    
     @IBOutlet weak var picViewHConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var picViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var picViewWConstraint: NSLayoutConstraint!
     // MARK:- 自定义属性
     var viewModel : StatusViewModel? {
@@ -62,16 +62,21 @@ class HomeViewCell: UITableViewCell {
             // 设置转发微博的正文
             if viewModel.status?.retweeted_status != nil {
                 
-                
+                // 设置转发微博的内容
                 if let screenName = viewModel.status?.retweeted_status?.user?.screen_name, let retweetedText = viewModel.status?.retweeted_status?.text{
-                    retweetedContentLabel.text = "@" + "\(screenName):" + retweetedText
+                    retweetedContentLabel.text = "@" + "\(screenName): " + retweetedText
+                 
+                // 设置背景显示
+                retweetedBackground.isHidden = false
                     
+                picViewTopConstraint.constant = 8
                 }
                
                 
             } else {
                 retweetedContentLabel.text = nil
-            
+                retweetedBackground.isHidden = true
+                picViewTopConstraint.constant = 0
             }
         }
     
@@ -94,8 +99,11 @@ extension HomeViewCell {
     fileprivate func calculatePicViewSize (count : Int) -> CGSize {
         // 无图
         if count == 0 {
+            picViewBottomConstraint.constant = 0
             return CGSize.zero
         }
+        
+        picViewBottomConstraint.constant = 10
         // 取出图片cell的布局
         let layout = PictureCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
