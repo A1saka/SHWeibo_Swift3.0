@@ -9,6 +9,7 @@
 import UIKit
 import AFNetworking
 import SDWebImage
+import MJRefresh
 
 class HomeViewController: BaseViewController {
 
@@ -32,13 +33,15 @@ class HomeViewController: BaseViewController {
         // 设置导航栏
         setupNaviBar()
         
-        // 请求主页微博数据
-        loadWeiboData()
-        
+
         // 设置cell高度
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
+        
+        // 布局header
+        setupHeaderView()
     }
+  
 }
 
 // MARK:- 设置UI界面
@@ -57,6 +60,17 @@ extension HomeViewController{
         titleBtn.addTarget(self, action: #selector(titleBtnClick(titleBtn:)), for: .touchUpInside)
         navigationItem.titleView = titleBtn
     
+    }
+    fileprivate func setupHeaderView() {
+        // 创建header
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(loadNewStatuses))
+        
+        header?.setTitle("下拉刷新", for: .idle)
+        header?.setTitle("释放更新", for: .pulling)
+        header?.setTitle("加载中...", for: .refreshing)
+        
+        tableView.mj_header = header
+        tableView.mj_header.beginRefreshing()
     }
     
 }
@@ -151,11 +165,22 @@ extension HomeViewController : UIViewControllerAnimatedTransitioning{
 
 // MARK:- 请求数据
 extension HomeViewController {
-
-    fileprivate func loadWeiboData(){
+    // 加载新数据（刷新）
+    @objc fileprivate func loadNewStatuses(){
+        loadWeiboData(isNewData: true)
+    }
     
+    //  加载微博数据
+    fileprivate func loadWeiboData(isNewData : Bool){
+        // 获取since_ID
+        var since_id = 0
+        if isNewData {
+            since_id = viewModels.first?.status?.mid ?? 0
+        
+        }
+        
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let parameters = ["access_token": UserAccountViewModel.shareIntance.account?.access_token]
+        let parameters = ["access_token": UserAccountViewModel.shareIntance.account?.access_token, "since_id" : "\(since_id)"]
         
         let manager = AFHTTPSessionManager()
         manager.responseSerializer.acceptableContentTypes?.insert("text/html")
@@ -169,14 +194,16 @@ extension HomeViewController {
             guard let resultArrary = responseObjectDict["statuses"] as? [[String : AnyObject]] else{
                 return
             }
+            var tempViewModel = [StatusViewModel]()
             for statusesDict in resultArrary{
                 let status = Status(dict : statusesDict)
                 let viewModels = StatusViewModel(status: status)
-                self.viewModels.append(viewModels)
+                tempViewModel.append(viewModels)
             }
-            
+            // 将数据放入成员变量数组中
+            self.viewModels = tempViewModel + self.viewModels
             // 缓存图片
-            self.cacheImage(viewModels: self.viewModels)
+            self.cacheImage(viewModels: tempViewModel)
             
         }) { (operation, error) in
             print(error)
@@ -201,6 +228,7 @@ extension HomeViewController {
         dispatchGroup.notify(queue: DispatchQueue.main){
             
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
             //            print("刷新表格")
         }
     }
