@@ -65,7 +65,6 @@ class HomeViewCell: UITableViewCell {
                 // 设置转发微博的内容
                 if let screenName = viewModel.status?.retweeted_status?.user?.screen_name, let retweetedText = viewModel.status?.retweeted_status?.text{
                     retweetedContentLabel.text = "@" + "\(screenName): " + retweetedText
-                 
                 // 设置背景显示
                 retweetedBackground.isHidden = false
                     
