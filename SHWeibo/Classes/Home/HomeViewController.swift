@@ -19,6 +19,8 @@ class HomeViewController: BaseViewController {
 
     fileprivate lazy var viewModels : [StatusViewModel] = [StatusViewModel]()
     
+    fileprivate lazy var tipLabel : UILabel = UILabel()
+    
     // MARK:- 系统调用函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,9 @@ class HomeViewController: BaseViewController {
         
         // 布局header
         setupHeaderView()
+        setupFooterView()
+        
+        setupTipLabel()
     }
   
 }
@@ -72,7 +77,15 @@ extension HomeViewController{
         tableView.mj_header = header
         tableView.mj_header.beginRefreshing()
     }
+    fileprivate func setupFooterView() {
+        tableView.mj_footer = MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(loadMoreStatuses))
     
+    }
+    fileprivate func setupTipLabel() {
+        view.addSubview(tipLabel)
+        tipLabel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 32)
+        tipLabel.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 0.7)
+    }
 }
 
 // MARK:- 事件监听
@@ -169,18 +182,25 @@ extension HomeViewController {
     @objc fileprivate func loadNewStatuses(){
         loadWeiboData(isNewData: true)
     }
-    
+    @objc fileprivate func loadMoreStatuses(){
+        loadWeiboData(isNewData: false)
+    }
     //  加载微博数据
     fileprivate func loadWeiboData(isNewData : Bool){
-        // 获取since_ID
+        // 获取since_ID 和 max_ID
         var since_id = 0
+        var max_id = 0
+        
         if isNewData {
             since_id = viewModels.first?.status?.mid ?? 0
-        
+        } else {
+            max_id = viewModels.last?.status?.mid ?? 0
+            max_id = max_id == 0 ? 0 : (max_id - 1)
         }
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let parameters = ["access_token": UserAccountViewModel.shareIntance.account?.access_token, "since_id" : "\(since_id)"]
+        let accessToken =  UserAccountViewModel.shareIntance.account?.access_token
+        let parameters = ["access_token": accessToken, "since_id" : "\(since_id)", "max_id" : "\(max_id)"]
         
         let manager = AFHTTPSessionManager()
         manager.responseSerializer.acceptableContentTypes?.insert("text/html")
@@ -201,7 +221,13 @@ extension HomeViewController {
                 tempViewModel.append(viewModels)
             }
             // 将数据放入成员变量数组中
-            self.viewModels = tempViewModel + self.viewModels
+         
+            
+            if isNewData {
+                self.viewModels = tempViewModel + self.viewModels
+            } else {
+                self.viewModels += tempViewModel
+            }
             // 缓存图片
             self.cacheImage(viewModels: tempViewModel)
             
@@ -229,6 +255,7 @@ extension HomeViewController {
             
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
             //            print("刷新表格")
         }
     }
