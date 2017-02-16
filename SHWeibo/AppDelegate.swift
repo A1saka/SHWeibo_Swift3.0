@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-func SHLog<S>(message : S, file : String = #file, funcName : String = #function, lineNumber : Int = #line){
+func SHLog<T>(message : T, file : String = #file, funcName : String = #function, lineNumber : Int = #line){
     
     let fileName = (file as NSString).lastPathComponent
     
